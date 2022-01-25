@@ -1,4 +1,4 @@
-name: 'Generate a Phoenix Project Release'
+name: 'Release a Phoenix Project'
 author: 'Aaron Sutton'
 description: 'Build and release a Phoenix project'
 branding:
