@@ -6,3 +6,6 @@ outputs:
     description: 'The target triple for which this release was compiled'
   identifier:
     description: 'The OTP app name and version for this release'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
