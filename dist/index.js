@@ -2898,22 +2898,22 @@ __nccwpck_require__.r(__webpack_exports__);
 
 
 let mixFile;
-const run = async () => {
-    try {
-        mixFile = (0,_mix__WEBPACK_IMPORTED_MODULE_1__/* .locateMixFile */ .P)('../github_actions_test');
-    }
-    catch (err) {
-        _actions_core__WEBPACK_IMPORTED_MODULE_2__.setFailed(`Action failed with error ${err.message}`);
-    }
-    const mixProject = await (0,_mix__WEBPACK_IMPORTED_MODULE_1__/* .parseMixFile */ .v)(mixFile);
-    const target = [os__WEBPACK_IMPORTED_MODULE_0__.arch(), os__WEBPACK_IMPORTED_MODULE_0__.platform(), os__WEBPACK_IMPORTED_MODULE_0__.release()].join('-');
-    const app = [mixProject.app, mixProject.version].join('-');
-    _actions_core__WEBPACK_IMPORTED_MODULE_2__.info("Mix application: " + app);
-    _actions_core__WEBPACK_IMPORTED_MODULE_2__.info("Build target: " + target);
-    await _actions_exec__WEBPACK_IMPORTED_MODULE_3__.exec("mix phx.gen.release");
-    await _actions_exec__WEBPACK_IMPORTED_MODULE_3__.exec("mix release");
-};
-await run();
+try {
+    mixFile = (0,_mix__WEBPACK_IMPORTED_MODULE_1__/* .locateMixFile */ .P)('../github_actions_test');
+}
+catch (err) {
+    _actions_core__WEBPACK_IMPORTED_MODULE_2__.setFailed(`Action failed with error ${err.message}`);
+}
+const mixProject = await (0,_mix__WEBPACK_IMPORTED_MODULE_1__/* .parseMixFile */ .v)(mixFile);
+const target = [os__WEBPACK_IMPORTED_MODULE_0__.arch(), os__WEBPACK_IMPORTED_MODULE_0__.platform(), os__WEBPACK_IMPORTED_MODULE_0__.release()].join('-');
+const app = [mixProject.app, mixProject.version].join('-');
+_actions_core__WEBPACK_IMPORTED_MODULE_2__.info("Mix application: " + app);
+_actions_core__WEBPACK_IMPORTED_MODULE_2__.info("Build target: " + target);
+_actions_core__WEBPACK_IMPORTED_MODULE_2__.setOutput('target', 'app');
+_actions_core__WEBPACK_IMPORTED_MODULE_2__.setOutput('outputKey', 'outputVal');
+_actions_core__WEBPACK_IMPORTED_MODULE_2__.exportVariable('MIX_ENV', 'prod');
+await _actions_exec__WEBPACK_IMPORTED_MODULE_3__.exec("mix phx.gen.release");
+await _actions_exec__WEBPACK_IMPORTED_MODULE_3__.exec("mix release");
 
 __webpack_handle_async_dependencies__();
 }, 1);
