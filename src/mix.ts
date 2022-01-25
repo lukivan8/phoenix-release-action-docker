@@ -1,10 +1,12 @@
 import { existsSync, readFile } from 'fs'
 import { resolve } from 'path'
+import { exec } from '@actions/exec'
 
 interface MixProject {
   app: string
   version: string
   elixir: string
+	phoenix: string
 }
 
 export function locateMixFile(buildDir: string): string {
@@ -26,6 +28,7 @@ export function parseMixFile(fileName: string): Promise<MixProject> {
         app: matchMixProperty(data, 'app'),
         version: matchMixProperty(data, 'version'),
         elixir: matchMixProperty(data, 'elixir'),
+				phoenix: matchPhoenixVersion(data)
       })
     })
   )
@@ -33,12 +36,22 @@ export function parseMixFile(fileName: string): Promise<MixProject> {
 
 function matchMixProperty(string: string, property: string): string {
   const propRegex = new RegExp(`${property}: [:"](~>\\s)?([\\.\\d\\w]+)[",]?`)
-	console.log(propRegex)
   const match = string.match(propRegex)
 
   if (match !== null) {
     return match[2]
   } else {
     throw new Error(`Cannot parse mix file property: ${property}`)
+  }
+}
+
+function matchPhoenixVersion(string: string) {
+  const propRegex = /{:phoenix[:,] [:"](~>\s)?([\.\d\w]+)\}?[",]?/
+  const match = string.match(propRegex)
+
+  if (match !== null) {
+    return match[2]
+  } else {
+    throw new Error(`Cannot parse mix file Phoenix version`)
   }
 }
