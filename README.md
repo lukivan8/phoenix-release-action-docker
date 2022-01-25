@@ -9,3 +9,9 @@ See the [Phoenix documentation](https://hexdocs.pm/phoenix/releases.html) and th
 Requires at least Phoenix 1.6.3 or higher and Elixir 1.12 or higher.
 
 ## Usage
+
+```yaml
+steps:
+	- name: Generate Phoenix release
+		uses: aaronjsutton/phoenix-release-action@v1.1
+```
