@@ -13,5 +13,5 @@ Requires at least Phoenix 1.6.3 or higher and Elixir 1.12 or higher.
 ```yaml
 steps:
 	- name: Generate Phoenix release
-		uses: aaronjsutton/phoenix-release-action@v1.1
+		uses: aaronjsutton/phoenix-release-action@v1.2
 ```

@@ -1,6 +1,9 @@
-name: 'Phoenix Release'
+name: 'Generate a Phoenix Project Release'
 author: 'Aaron Sutton'
 description: 'Build and release a Phoenix project'
+branding:
+  color: 'orange'
+  icon: 'box'
 outputs:
   target:
     description: 'The target triple for which this release was compiled'
