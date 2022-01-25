@@ -1,6 +1,6 @@
-name: 'Generate a Phoenix Project Release'
+name: 'Release a Phoenix Project'
 author: 'Aaron Sutton'
-description: 'Build and release a Phoenix project'
+description: 'Prepare a Phoenix project for releases using Elixir releases'
 branding:
   color: 'orange'
   icon: 'box'
