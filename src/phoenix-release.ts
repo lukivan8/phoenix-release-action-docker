@@ -20,5 +20,5 @@ const app =  [mixProject.app, mixProject.version].join('-')
 core.info("Mix application: " + app)
 core.info("Build target: " + target)
 
-exec("mix phx.gen.release")
-exec("mix release")
+await exec("mix phx.gen.release")
+await exec("mix release")
