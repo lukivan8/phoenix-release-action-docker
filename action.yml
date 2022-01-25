@@ -1,0 +1,8 @@
+name: 'Phoenix Release'
+author: 'Aaron Sutton'
+description: 'Build and release a Phoenix project'
+outputs:
+  target:
+    description: 'The target triple for which this release was compiled'
+  identifier:
+    description: 'The OTP app name and version for this release'
