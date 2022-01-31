@@ -7,7 +7,7 @@ import * as exec from '@actions/exec'
 let mixFile: string | undefined
 
 try {
-	mixFile = locateMixFile('../github_actions_test')
+	mixFile = locateMixFile('.')
 } catch (err: any) {
 	core.setFailed(`Action failed with error ${err.message}`);
 }
