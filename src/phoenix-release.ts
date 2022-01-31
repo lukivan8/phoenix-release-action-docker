@@ -20,8 +20,8 @@ const app =  [mixProject.app, mixProject.version].join('-')
 core.info("Mix application: " + app)
 core.info("Build target: " + target)
 
-core.setOutput('target', 'app');
-core.setOutput('outputKey', 'outputVal');
+core.setOutput('TARGET', target);
+core.setOutput('APP', app);
 
 core.exportVariable('MIX_ENV', 'prod');
 
