@@ -25,5 +25,4 @@ core.setOutput('APP', app);
 
 core.exportVariable('MIX_ENV', 'prod');
 
-await exec.exec("mix phx.gen.release")
-await exec.exec("mix release")
+await exec.exec("mix phx.gen.release --docker")
