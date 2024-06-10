@@ -1,8 +1,8 @@
-name: 'Release a Phoenix Project'
-author: 'Aaron Sutton'
+name: 'Create Phoenix Project DOCKERFILE'
+author: 'Ivan Lukov'
 description: 'Prepare a Phoenix project for releases using Elixir releases'
 branding:
-  color: 'orange'
+  color: 'blue'
   icon: 'box'
 outputs:
   target:
